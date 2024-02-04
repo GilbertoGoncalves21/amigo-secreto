@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { DetailsComponent } from './details/details.component';
+import { LoginComponent } from './login/login.component';
+import { PersonalizedDrawComponent } from './personalized-draw/personalized-draw.component';
+import { RandomDrawComponent } from './random-draw/random-draw.component';
 
 const routes: Routes = [
     {
@@ -9,8 +11,16 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'details/:id',
-        component: DetailsComponent
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'personalized-draw',
+        component: PersonalizedDrawComponent
+    },
+    {
+        path: 'random-draw',
+        component: RandomDrawComponent
     }
 ];
 
