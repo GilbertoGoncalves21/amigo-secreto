@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PersonalizedDrawComponent } from './personalized-draw/personalized-draw.component';
 import { RandomDrawComponent } from './random-draw/random-draw.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'random-draw',
         component: RandomDrawComponent
+    },
+    {
+        path: 'result',
+        component: ResultComponent
     }
 ];
 

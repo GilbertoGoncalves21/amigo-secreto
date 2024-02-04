@@ -1,1 +1,36 @@
-<p>home works!</p>
+<section class="home">
+  <main>
+    <section class="menu">
+      <h1>Escolha qual modelo de sorteio deseja realizar:</h1>
+    </section>
+    <section class="options">
+      <section class="personalized-draw">
+        <button type="button" [routerLink]="['/personalized-draw']">
+          Sorteio Personalizado
+        </button>
+      </section>
+      <section class="random-draw">
+        <button type="button" [routerLink]="['/random-draw']">
+          Sorteio Padrão
+        </button>
+      </section>
+      <section class="result">
+        <button type="button" [routerLink]="['/result']">
+          Consultar Resultado
+        </button>
+      </section>
+    </section>
+    <section class="login">
+      <section class="sign-in">
+        <button type="button" [routerLink]="['/login']">
+          Sign In
+        </button >
+      </section>
+      <section class="sign-up">
+        <button type="button" [routerLink]="['/login']">
+          Sign Up
+        </button >
+      </section>
+    </section>
+  </main>
+</section>
