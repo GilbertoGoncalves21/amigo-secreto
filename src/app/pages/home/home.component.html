@@ -1,36 +1,44 @@
 <section class="home">
+  <nav>
+    <section class="cabecalho">
+      <section class="login" [routerLink]="['/login']">
+        <span class="material-symbols-outlined">
+          login
+        </span>
+      </section>
+    </section>
+  </nav>
   <main>
-    <section class="menu">
-      <h1>Escolha qual modelo de sorteio deseja realizar:</h1>
-    </section>
     <section class="options">
-      <section class="personalized-draw">
-        <button type="button" [routerLink]="['/personalized-draw']">
+      <section class="personalized-draw" [routerLink]="['/personalized-draw']">
+        <span class="material-symbols-outlined">
+          edit
+          </span>
+        <span>
           Sorteio Personalizado
-        </button>
+        </span>
       </section>
-      <section class="random-draw">
-        <button type="button" [routerLink]="['/random-draw']">
+      <section class="random-draw" [routerLink]="['/random-draw']">
+        <span class="material-symbols-outlined">
+          featured_seasonal_and_gifts
+        </span>
+        <span>
           Sorteio Padrão
-        </button>
+        </span>
       </section>
-      <section class="result">
-        <button type="button" [routerLink]="['/result']">
+      <section class="result" [routerLink]="['/result']">
+        <span class="material-symbols-outlined">
+          visibility
+          </span>
+        <span>
           Consultar Resultado
-        </button>
-      </section>
-    </section>
-    <section class="login">
-      <section class="sign-in">
-        <button type="button" [routerLink]="['/login']">
-          Sign In
-        </button >
-      </section>
-      <section class="sign-up">
-        <button type="button" [routerLink]="['/login']">
-          Sign Up
-        </button >
+        </span>
       </section>
     </section>
   </main>
+  <footer>
+    <section class="rodape">
+
+    </section>
+  </footer>
 </section>
