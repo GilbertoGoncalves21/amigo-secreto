@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-random-draw',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./random-draw.component.css']
 })
 export class RandomDrawComponent {
+
+  constructor () {}
   nome: string = ''; // Variável para armazenar o nome inserido
   nomes: string[] = []; // Array para armazenar os nomes adicionados
 
