@@ -2,4 +2,28 @@
   <h1>Sorteio Padrão</h1>
 </header>
 <main>
+  <div class="random-draw-container">
+    <h2>Random Draw</h2>
+  
+    <!-- Input para inserir o nome -->
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]="nome">
+    </mat-form-field>
+  
+    <!-- Botão para adicionar o nome -->
+    <button mat-raised-button color="primary" (click)="adicionarNome()">Adicionar Nome</button>
+  
+    <!-- Lista de nomes adicionados -->
+    <ul *ngIf="nomes.length > 0">
+      <li *ngFor="let nome of nomes">{{ nome }}</li>
+    </ul>
+  
+    <!-- Botão para realizar o sorteio -->
+    <button mat-raised-button color="accent" (click)="realizarSorteio()" [disabled]="nomes.length === 0">Realizar Sorteio</button>
+  
+    <!-- Botão para cancelar e limpar as informações -->
+    <button mat-raised-button color="warn" (click)="limpar()">Cancelar e Limpar</button>
+  
+    <!-- Aqui você pode exibir o resultado do sorteio, se necessário -->
+  </div>  
 </main>

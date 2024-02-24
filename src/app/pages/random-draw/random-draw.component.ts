@@ -1,23 +1,34 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-random-draw',
   templateUrl: './random-draw.component.html',
-  styleUrls: ['./random-draw.component.scss']
+  styleUrls: ['./random-draw.component.css']
 })
 export class RandomDrawComponent {
-  participantsForm: FormGroup;
+  nome: string = ''; // Variável para armazenar o nome inserido
+  nomes: string[] = []; // Array para armazenar os nomes adicionados
 
-  constructor() {
-    this.participantsForm = new FormGroup({
-      participants: new FormControl('')
-    });
+  adicionarNome(): void {
+    if (this.nome.trim()) { // Verifica se o nome não está vazio ou consiste apenas de espaços em branco
+      this.nomes.push(this.nome); // Adiciona o nome à lista de nomes
+      this.nome = ''; // Limpa o campo de entrada
+    }
   }
 
-  performDraw() {
-    const participantsValue = this.participantsForm.get('participants')?.value;
-    // Implemente sua lógica de sorteio aqui
-    console.log(participantsValue);
+  realizarSorteio(): void {
+    if (this.nomes.length > 0) { // Verifica se há nomes na lista
+      // Realiza o sorteio
+      const indiceSorteado = Math.floor(Math.random() * this.nomes.length);
+      const nomeSorteado = this.nomes[indiceSorteado];
+      console.log(`O nome sorteado é: ${nomeSorteado}`);
+
+      // Aqui você pode adicionar mais lógica conforme necessário
+    }
+  }
+
+  limpar(): void {
+    // Limpa a lista de nomes
+    this.nomes = [];
   }
 }
