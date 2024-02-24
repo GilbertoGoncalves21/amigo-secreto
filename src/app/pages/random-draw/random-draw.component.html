@@ -2,40 +2,31 @@
   <h1>Sorteio Padrão</h1>
 </header>
 <main>
-  <div class="random-draw-container">
+  <section class="title">
     <h2>Informe o Nome das pessoas que estarão participando do sorteio</h2>
-    <!-- Input para inserir o nome -->
-    <mat-form-field>
-      <input 
-        matInput 
-        placeholder="Nome" 
-        [(ngModel)]="nome"
-      />
-    </mat-form-field>
-    <!-- Botão para adicionar o nome -->
-    <button 
-      mat-raised-button 
-      color="primary" 
-      (click)="adicionarNome()">
-      Adicionar Nome
-    </button>
-    <!-- Lista de nomes adicionados -->
-    <ul *ngIf="nomes.length > 0">
+  </section>
+  <div class="input-section">
+    <input placeholder="Infome o nome aqui" [(ngModel)]="nome" />
+    <button class="add-button" (click)="adicionarNome()">Adicionar Nome</button>
+  </div>
+  <hr />
+  <div class="list-section" id="listaNomes">
+    <ul *ngIf="nomes.length > 0" class="nome-list">
       <li *ngFor="let nome of nomes">{{ nome }}</li>
     </ul>
-    <!-- Botão para realizar o sorteio -->
+  </div>
+  <hr />
+  <section class="button-section">
     <button
-      mat-raised-button
-      color="accent"
+      class="action-button"
       (click)="realizarSorteio()"
       [disabled]="nomes.length === 0"
     >
       Realizar Sorteio
     </button>
-    <!-- Botão para cancelar e limpar as informações -->
-    <button mat-raised-button color="warn" (click)="limpar()">
-      Cancelar e Limpar
+    <button class="action-button" (click)="limpar()">
+      Limpar lista de nome
     </button>
-    <!-- Aqui você pode exibir o resultado do sorteio, se necessário -->
-  </div>
+    <button class="action-button" [routerLink]="['']">Voltar ao Início</button>
+  </section>
 </main>
