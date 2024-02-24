@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { PersonalizedDrawComponent } from './personalized-draw/personalized-draw.component';
 import { RandomDrawComponent } from './random-draw/random-draw.component';
 import { ResultComponent } from './result/result.component';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ResultComponent } from './result/result.component';
   imports: [
     CommonModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    MaterialModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
