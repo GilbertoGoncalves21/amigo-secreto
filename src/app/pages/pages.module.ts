@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PersonalizedDrawComponent,
     RandomDrawComponent,
-    ResultComponent
+    ResultComponent,
   ],
   imports: [
     CommonModule,
@@ -26,4 +26,4 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ]
 })
-export class PagesModule { }
+export class PagesModule {}
