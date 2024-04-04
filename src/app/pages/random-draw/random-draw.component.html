@@ -1,32 +1,44 @@
 <header>
-  <h1>Sorteio Padrão</h1>
+  <mat-toolbar color="primary">
+    <h1>Sorteio Padrão</h1>
+  </mat-toolbar>
 </header>
 <main>
-  <section class="title">
-    <h2>Informe o Nome das pessoas que estarão participando do sorteio</h2>
+  <section class="insert_name">
+    <mat-form-field class="example-user-input">
+      <mat-label>Informe o nome dos participantes:</mat-label>
+      <input matInput #nomeInput [formAction]="message" [(ngModel)]="nome" name="nome" required />
+    </mat-form-field>
+    <button mat-raised-button (click)="adicionarNome(nomeInput.value)">
+      Inserir
+    </button>
   </section>
-  <div class="input-section">
-    <input placeholder="Infome o nome aqui" [(ngModel)]="nome" />
-    <button class="add-button" (click)="adicionarNome()">Adicionar Nome</button>
-  </div>
-  <hr />
-  <div class="list-section" id="listaNomes">
-    <ul *ngIf="nomes.length > 0" class="nome-list">
-      <li *ngFor="let nome of nomes">{{ nome }}</li>
-    </ul>
-  </div>
-  <hr />
+  <section class="table_name">
+    <section class="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>Posição</th>
+          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </section>
+  </section>
   <section class="button-section">
     <button
-      class="action-button"
+      mat-raised-button
+      color="primary"
       (click)="realizarSorteio()"
-      [disabled]="nomes.length === 0"
+      [disabled]="nomes.length <= 2"
     >
       Realizar Sorteio
     </button>
-    <button class="action-button" (click)="limpar()">
-      Limpar lista de nome
-    </button>
-    <button class="action-button" [routerLink]="['']">Voltar ao Início</button>
+    <button mat-raised-button (click)="limpar()">Limpar lista de nome</button>
+    <button mat-raised-button [routerLink]="['']">Voltar ao Início</button>
   </section>
 </main>
