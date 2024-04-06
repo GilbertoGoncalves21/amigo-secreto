@@ -63,7 +63,7 @@ export class RandomDrawComponent {
       console.log(`${sorteioItem.pessoa} -> ${sorteioItem.amigoSecreto} (Código: ${sorteioItem.codigo})`);
     });
   }
-
+  
   shuffle(array: any[]): any[] {
     let currentIndex = array.length, temporaryValue, randomIndex;
   

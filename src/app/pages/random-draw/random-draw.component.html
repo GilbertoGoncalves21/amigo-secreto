@@ -32,13 +32,28 @@
   <section class="button-section">
     <button
       mat-raised-button
+      class="first"
       color="primary"
       (click)="realizarSorteio()"
       [disabled]="nomes.length <= 2"
     >
       Realizar Sorteio
     </button>
-    <button mat-raised-button (click)="limpar()">Limpar lista de nome</button>
-    <button mat-raised-button [routerLink]="['']">Voltar ao Início</button>
+    <button 
+      class="second"
+      mat-raised-button 
+      (click)="limpar()"
+      [disabled]="nomes.length < 1"
+    >
+      Limpar lista de nome
+    </button>
+    <button 
+      class="third"
+      color="warn"
+      mat-raised-button 
+      [routerLink]="['']"
+    >
+      Voltar ao Início
+    </button>
   </section>
 </main>
