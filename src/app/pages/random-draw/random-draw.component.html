@@ -7,9 +7,16 @@
   <section class="insert_name">
     <mat-form-field class="example-user-input">
       <mat-label>Informe o nome dos participantes:</mat-label>
-      <input matInput #nomeInput [formAction]="message" [(ngModel)]="nome" name="nome" required />
+      <input
+        matInput
+        #nomeInput
+        [formAction]="message"
+        [(ngModel)]="name"
+        name="nome"
+        required
+      />
     </mat-form-field>
-    <button mat-raised-button (click)="adicionarNome(nomeInput.value)">
+    <button mat-raised-button (click)="addName(nomeInput.value)">
       Inserir
     </button>
   </section>
@@ -34,25 +41,20 @@
       mat-raised-button
       class="first"
       color="primary"
-      (click)="realizarSorteio()"
-      [disabled]="nomes.length <= 2"
+      (click)="executeDraw()"
+      [disabled]="names.length <= 2"
     >
       Realizar Sorteio
     </button>
-    <button 
+    <button
       class="second"
-      mat-raised-button 
-      (click)="limpar()"
-      [disabled]="nomes.length < 1"
+      mat-raised-button
+      (click)="cleanNameList()"
+      [disabled]="names.length < 1"
     >
       Limpar lista de nome
     </button>
-    <button 
-      class="third"
-      color="warn"
-      mat-raised-button 
-      [routerLink]="['']"
-    >
+    <button class="third" color="warn" mat-raised-button [routerLink]="['']">
       Voltar ao Início
     </button>
   </section>
