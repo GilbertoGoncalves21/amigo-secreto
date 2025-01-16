@@ -1,32 +1,15 @@
-<section class="home">
-  <nav mat-toolbar color="primary">
-    <section class="cabecalho">
-      <section class="logo">
-        <span>representativo de imagem</span>
-      </section>
-      <section class="login" [routerLink]="['/login']">
-        <span>
-          <span class="material-symbols-outlined"> login </span>
-        </span>
-      </section>
-    </section>
-  </nav>
-  <main>
-    <section class="options">
-      <mat-card class="personalized-draw" [routerLink]="['/personalized-draw']">
-        <span class="material-symbols-outlined"> edit </span>
-        <span>Sorteio Personalizado</span>
-      </mat-card>
-      <mat-card class="random-draw" [routerLink]="['/random-draw']">
-        <span class="material-symbols-outlined">
-          featured_seasonal_and_gifts
-        </span>
-        <span>Sorteio Padrão</span>
-      </mat-card>
-      <mat-card class="result" [routerLink]="['/result']">
-        <span class="material-symbols-outlined"> visibility </span>
-        <span>Consultar Resultado</span>
-      </mat-card>
-    </section>
-  </main>
-</section>
+<main>
+  <section class="logo">
+    <h1>Amigo Secreto</h1>
+    <img src="../../../assets/logo.webp" alt="logo.webp">
+  </section>
+  <section class="option">
+    <h2>Escolha uma das alternativas abaixo:</h2>
+    <button class="first" (click)="click()">Criar um grupo</button>
+    <button class="second" (click)="click()">Ver resultado</button>
+    <p><a href="">Visualizar meus grupos</a></p>
+  </section>
+</main>
+<footer>
+  <p>Created By <a href="https://www.instagram.com/gilberto_goncalves21/?hl=pt-br" target="_blank">&#64;gilberto_goncalves21</a></p>
+</footer>

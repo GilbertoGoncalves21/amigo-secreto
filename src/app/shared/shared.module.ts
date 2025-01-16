@@ -3,19 +3,16 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { MenuComponent } from './menu/menu.component';
 import { SimpleDialogComponent } from './simple-dialog/simple-dialog.component';
 import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   declarations: [
-    MenuComponent,
     SimpleDialogComponent,
     ConfirmDialogComponent,
   ],
   exports: [
-    MenuComponent,
     SimpleDialogComponent,
     ConfirmDialogComponent,
   ],
