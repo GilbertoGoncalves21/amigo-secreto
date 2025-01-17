@@ -9,10 +9,17 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { RoutingModule } from './routing.module';
+import { GroupComponent } from './group/group.component';
+import { CreateGroupComponent } from './create-group/create-group.component';
+import { IntegrantComponent } from './group/integrant/integrant.component';
+import { LayoutComponent } from '../shared/layout/layout.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    GroupComponent,
+    CreateGroupComponent,
+    IntegrantComponent,
     ResultComponent,
   ],
   imports: [
@@ -23,7 +30,7 @@ import { RoutingModule } from './routing.module';
     FormsModule,
     MatTableModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
   ]
 })
 export class PagesModule {}
