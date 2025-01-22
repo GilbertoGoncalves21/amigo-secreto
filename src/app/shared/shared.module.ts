@@ -6,6 +6,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { SimpleDialogComponent } from './simple-dialog/simple-dialog.component';
 import { MaterialModule } from '../material/material.module';
 import { LayoutComponent } from './layout/layout.component';
+import { FormsModule } from '@angular/forms';
+import { EditNameDialogComponent } from './edit-name-dialog/edit-name-dialog.component';
 
 
 @NgModule({
@@ -13,6 +15,7 @@ import { LayoutComponent } from './layout/layout.component';
     SimpleDialogComponent,
     ConfirmDialogComponent,
     LayoutComponent,
+    EditNameDialogComponent,
   ],
   exports: [
     SimpleDialogComponent,
@@ -23,7 +26,8 @@ import { LayoutComponent } from './layout/layout.component';
     CommonModule,
     RouterModule,
     MatDialogModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }

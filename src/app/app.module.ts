@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { MaterialModule } from './material/material.module';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     PagesModule,
     HttpClientModule,
     MaterialModule,
-    MatTableModule
+    MatTableModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

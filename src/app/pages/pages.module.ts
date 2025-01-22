@@ -12,7 +12,9 @@ import { RoutingModule } from './routing.module';
 import { GroupComponent } from './group/group.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 import { IntegrantComponent } from './group/integrant/integrant.component';
-import { LayoutComponent } from '../shared/layout/layout.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { LayoutComponent } from '../shared/layout/layout.component';
     MatTableModule,
     MatButtonModule,
     MatTooltipModule,
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class PagesModule {}
