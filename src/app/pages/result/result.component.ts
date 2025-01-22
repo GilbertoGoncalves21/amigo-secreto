@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent {
+  private readonly _title: string = 'Ver Resultado'
 
+  constructor() { }
+
+  get title(): string {
+    return this._title;
+  }
 }
