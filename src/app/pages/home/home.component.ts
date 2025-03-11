@@ -7,14 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  private _username: string = 'Gilbert';
 
   constructor(private router: Router) { }
 
-  createGroup() {
-    this.router.navigateByUrl('/create-group');
+  get username() {
+    return this._username;
   }
 
-  viewResult() {
-    this.router.navigateByUrl('/result');
+  navigateToCreateGrorp() {
+    this.router.navigate(['/create-group']);
+  }
+  
+  navigateToResults() {
+    this.router.navigate(['/result']);
   }
 }

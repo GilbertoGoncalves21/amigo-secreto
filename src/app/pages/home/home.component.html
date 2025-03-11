@@ -1,15 +1,40 @@
-<main>
-  <section class="logo">
-    <h1>Amigo Secreto</h1>
-    <img src="../../../assets/logo.webp" alt="logo.webp">
+<header>
+  <section class="header">
+    <section class="cabecalho">
+      <h1>Bem vindo</h1>
+      <h2>{{ username }}</h2>
+    </section>
+    <section class="account">
+      <div class="btn-account">
+        <img src="../../../assets/eu.svg" alt="Foto de Perfil">
+      </div>
+    </section>
   </section>
-  <section class="option">
-    <h2>Escolha uma das alternativas abaixo:</h2>
-    <button class="first" (click)="createGroup()">Criar um grupo</button>
-    <button class="second" (click)="viewResult()">Ver resultado</button>
-    <p><a href="/group">Visualizar meus grupos</a></p>
+</header>
+<main>
+  <section class="main">
+    <section class="title">
+      <h1>O que deseja fazer?</h1>
+    </section>
+    <section class="options">
+      <div class="btn">
+        <div class="text" (click)="navigateToCreateGrorp()">
+          <H1>Grupos</H1>
+          <p>Criar, editar e excluir um Grupo</p>
+        </div>
+        <div class="icon">
+          <img src="../../../assets/group-icon.svg" alt="">
+        </div>
+      </div>
+      <div class="btn">
+        <div class="text" (click)="navigateToResults()">
+          <H1>Resultados</H1>
+          <p>Visualizar resultados</p>
+        </div>
+        <div class="icon">
+          <img src="../../../assets/results.svg" alt="">
+        </div>
+      </div>
+    </section>
   </section>
 </main>
-<footer>
-  <p>Created By <a href="https://www.instagram.com/gilberto_goncalves21/?hl=pt-br" target="_blank">&#64;gilberto_goncalves21</a></p>
-</footer>

@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "dist/amigo-secreto",
+    "site": "gilbertogoncalves-amigosecreto",
+    "public": "dist/pokedex",
     "ignore": [
       "firebase.json",
       "**/.*",
