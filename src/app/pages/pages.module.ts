@@ -9,20 +9,16 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { RoutingModule } from './routing.module';
-import { GroupComponent } from './group/group.component';
-import { CreateGroupComponent } from './create-group/create-group.component';
-import { IntegrantComponent } from './group/integrant/integrant.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { GroupComponent } from './group/group.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    GroupComponent,
-    CreateGroupComponent,
-    IntegrantComponent,
     ResultComponent,
+    GroupComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +31,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatIconModule,
     MatDialogModule
-  ]
+  ],
 })
 export class PagesModule {}

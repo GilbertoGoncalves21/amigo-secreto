@@ -1,9 +1,20 @@
-<section>
-  <button class="back" (click)="goBack()">
-    <span class="material-symbols-outlined">
-        arrow_back
-        </span>
-  </button>
-  <h1>{{ title }}</h1>
-</section>
-<ng-content></ng-content>
+<header>
+  <section class="header">
+    <section class="cabecalho">
+      <img src="../../../assets/logo.svg" alt="Amigo Secreto">
+    </section>
+    <section class="account">
+      <div class="btn-account">
+        <img src="../../../assets/eu.svg" alt="Foto de Perfil" />
+      </div>
+    </section>
+  </section>
+</header>
+
+<main class="content">
+  <section class="welcome" *ngIf="username != ''">
+    <p>Bem-vindo</p>
+    <h1>{{ username }}</h1>
+  </section>
+  <ng-content></ng-content>
+</main>

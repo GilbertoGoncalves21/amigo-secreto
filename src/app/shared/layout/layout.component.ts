@@ -11,8 +11,21 @@ export class LayoutComponent {
   constructor(private router: Router) { }
 
   @Input() title: string = ''
+  @Input() username: string = '';
 
-  goBack(): void {
+  goHome(): void {
     this.router.navigateByUrl('');
+  }
+
+  goGroups(): void {
+    this.router.navigateByUrl('/group');
+  }
+
+  goResults(): void {
+    this.router.navigateByUrl('/result');
+  }
+  
+  goContact(): void {
+    this.router.navigateByUrl('/contact');
   }
 }

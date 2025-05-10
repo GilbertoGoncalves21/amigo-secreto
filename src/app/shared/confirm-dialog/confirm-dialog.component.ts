@@ -4,12 +4,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-confirm-dialog',
   template: `
+    <h1 mat-dialog-title style="font-size: 1.5rem; font-weight: bold">{{ data.title }}</h1>
     <mat-dialog-content>
-      <p>{{ data.message }}</p>
+      <p style="font-size: 1rem;">{{ data.message }}</p>
     </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button [matDialogClose]="false">Cancelar</button>
-      <button mat-button [matDialogClose]="true">Confirmar</button>
+    <mat-dialog-actions style="display: flex; justify-content: space-between;">
+      <button mat-button [matDialogClose]="false" style="font-size: 1rem; background-color: #e63939; color:white">Cancelar</button>
+      <button mat-button [matDialogClose]="true" style="font-size: 1rem; background-color: #0070FF; color:white">Confirmar</button>
     </mat-dialog-actions>
   `
 })

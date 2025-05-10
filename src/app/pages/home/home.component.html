@@ -1,40 +1,52 @@
-<header>
-  <section class="header">
-    <section class="cabecalho">
-      <h1>Bem vindo</h1>
-      <h2>{{ username }}</h2>
-    </section>
-    <section class="account">
-      <div class="btn-account">
-        <img src="../../../assets/eu.svg" alt="Foto de Perfil">
-      </div>
-    </section>
-  </section>
-</header>
-<main>
-  <section class="main">
-    <section class="title">
-      <h1>O que deseja fazer?</h1>
-    </section>
-    <section class="options">
-      <div class="btn">
-        <div class="text" (click)="navigateToCreateGrorp()">
-          <H1>Grupos</H1>
-          <p>Criar, editar e excluir um Grupo</p>
+<app-layout [username]="'Gilberto'">
+  <main>
+    <section class="main">
+      <section class="title">
+        <h1>O que deseja fazer?</h1>
+      </section>
+  
+      <section class="options">
+        <!-- BOTÕES PARA O MOBILE-->
+        <div class="btn" (click)="navigateToGroup()">
+          <div class="text">
+            <H1>Grupos</H1>
+            <p>Criar, editar e excluir um Grupo</p>
+          </div>
+          <div class="icon">
+            <img src="../../../assets/group-icon.svg" alt="">
+          </div>
         </div>
-        <div class="icon">
-          <img src="../../../assets/group-icon.svg" alt="">
+  
+        <div class="btn" (click)="navigateToResults()">
+          <div class="text">
+            <H1>Resultados</H1>
+            <p>Visualizar resultados</p>
+          </div>
+          <div class="icon">
+            <img src="../../../assets/results.svg" alt="">
+          </div>
         </div>
-      </div>
-      <div class="btn">
-        <div class="text" (click)="navigateToResults()">
-          <H1>Resultados</H1>
-          <p>Visualizar resultados</p>
+  
+        <!-- BOTÕES PARA O DESKTOP-->
+        <div class="btn-desktop" (click)="navigateToGroup()">
+          <div class="icon">
+            <img src="../../../assets/group-icon.svg" alt="" width="50%">
+          </div>
+          <div class="text">
+            <H1>Grupos</H1>
+          </div>
         </div>
-        <div class="icon">
-          <img src="../../../assets/results.svg" alt="">
+  
+        <div class="btn-desktop" (click)="navigateToResults()">
+          <div class="icon">
+            <img src="../../../assets/results.svg" alt="" width="50%">
+          </div>
+          <div class="text">
+            <H1>Resultados</H1>
+          </div>
         </div>
-      </div>
+  
+      </section>
     </section>
-  </section>
-</main>
+  </main>
+</app-layout>

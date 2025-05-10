@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
-import { CreateGroupComponent } from './create-group/create-group.component';
 import { GroupComponent } from './group/group.component';
-import { IntegrantComponent } from './group/integrant/integrant.component';
 
 const routes: Routes = [
     {
@@ -12,16 +10,12 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
-        path:'create-group',
-        component: CreateGroupComponent
+        path: 'home',
+        component: HomeComponent
     },
     {
-        path:'group',
+        path: 'group',
         component: GroupComponent
-    },
-    {
-        path:'integrants',
-        component: IntegrantComponent
     },
     {
         path: 'result',

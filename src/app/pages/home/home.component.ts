@@ -15,8 +15,8 @@ export class HomeComponent {
     return this._username;
   }
 
-  navigateToCreateGrorp() {
-    this.router.navigate(['/create-group']);
+  navigateToGroup() {
+    this.router.navigate(['/group']);
   }
   
   navigateToResults() {
