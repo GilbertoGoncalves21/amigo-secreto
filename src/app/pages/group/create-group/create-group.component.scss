@@ -1,0 +1,115 @@
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 1rem;
+
+        .header-title {
+            text-align: center;
+            margin-top: 4rem;
+
+            h2 {
+                font-size: 2rem;
+                margin: 1rem 0;
+                color: #7b0d0d;
+                font-weight: bold;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+
+                .inputs {
+                    width: 40%;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        font-weight: 500;
+                    }
+                }
+                
+                .addData {
+                    width: 10%;
+                    height: 3rem;
+                    margin-bottom: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: linear-gradient(90deg, #7b0d0d, #e63939);
+                    border-radius: 8px;
+                    border: none;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: transform 0.3s ease-in-out;
+        
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+        }
+
+
+        .table {
+            width: 90%;
+            height: 25rem;
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow-y: auto;
+
+            table {
+                width: 100%;
+                border-radius: 20px;
+                border-collapse: collapse;
+
+                th {
+                    background-color: #7b0d0d;
+                    color: white;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                td {
+                    text-align: center;
+                    border-radius: 20px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        .addGroup {
+            width: 50%;
+            margin-top: 4rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #7b0d0d, #e63939);
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

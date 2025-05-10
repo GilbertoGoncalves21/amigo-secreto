@@ -1,8 +1,9 @@
+export const EMPTY: string = '';
+
 export class StringUtils {
-  static readonly EMPTY: string = '';
   
   static format(value: string): string | null {
-    return value ? (value === '-' ? null : value) : this.EMPTY;
+    return value ? (value === '-' ? null : value) : EMPTY;
   }
 
   static toStringParam(param: any) {
@@ -22,6 +23,6 @@ export class StringUtils {
   }
 
   static capitalizeWords(string: string) {
-    return string?.replace(/(?:^|\s)\S/g, (value) => value.toUpperCase()) ?? this.EMPTY;
+    return string?.replace(/(?:^|\s)\S/g, (value) => value.toUpperCase()) ?? EMPTY;
   }
 }

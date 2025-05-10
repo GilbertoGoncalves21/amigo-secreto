@@ -2,37 +2,25 @@
     <main>
         <h1>Grupos</h1>
         <p>Acesse seus grupos criados</p>
+
         <section class="groups">
-            <mat-card class="group">
-                <mat-card-content class="content">
-                    <section class="text">
-                        <h4>Família Gonçalves</h4>
-                        <span>24 participantes</span>
-                    </section>
-                  <button (click)="navigateToGroup(1)">Acessar</button>
-                </mat-card-content>
-              </mat-card>
-            
-              <mat-card class="group">
-                <mat-card-content class="content">
-                    <section class="text">
-                        <h4>Família Almeida</h4>
-                        <span>32 participantes</span>
-                    </section>
-                  <button (click)="navigateToGroup(2)">Acessar</button>
-                </mat-card-content>
-              </mat-card>
-            
-              <mat-card class="group">
-                <mat-card-content class="content">
-                    <section class="text">
-                        <h4>Família Machado</h4>
-                        <span>15 participantes</span>
-                    </section>
-                  <button (click)="navigateToGroup(3)">Acessar</button>
-                </mat-card-content>
-              </mat-card>
+            <ng-container *ngIf="groups.length > 0; else noGroups">
+                <mat-card class="group" *ngFor="let group of groups; trackBy: trackById">
+                    <mat-card-content class="content">
+                        <section class="text">
+                            <h4>{{ group.name }}</h4>
+                            <span>{{ group.participants.length }} participantes</span>
+                        </section>
+                        <button (click)="navigateToGroup(group.id)">Acessar</button>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
         </section>
+
+        <ng-template #noGroups>
+            <p class="no-groups" style="text-align:center">Não há grupos criados.<br/>Clique em '+' para criar um novo grupo.</p>
+        </ng-template>
+
         <img src="../../../assets/btn-add.svg" alt="Adicionar grupo" (click)="addGroup()">
     </main>
 </app-layout>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { GroupComponent } from './group/group.component';
+import { CreateGroupComponent } from './group/create-group/create-group.component';
 
 const routes: Routes = [
     {
@@ -14,8 +15,12 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'group',
+        path: 'groups',
         component: GroupComponent
+    },
+    {
+        path: 'group/:id',
+        component: CreateGroupComponent
     },
     {
         path: 'result',

@@ -1,0 +1,62 @@
+<app-layout [username]="'Gilberto Jr.'">
+    <main class="create-group">
+      <section class="header-title">
+        <h2>Criar Grupo</h2>
+      </section>
+  
+      <form class="form" [formGroup]="form" #groupForm="ngForm">  
+        <mat-form-field appearance="outline" class="inputs">
+          <mat-label>Nome*</mat-label>
+          <input matInput placeholder="Inserir nome do participante" formControlName="integrantName">
+        </mat-form-field>
+        
+        <button class="addData" (click)="addParticipant()">Adicionar</button>
+      </form>
+
+  
+      <div class="table">
+          <table mat-table [dataSource]="participants" class="mat-elevation-z1">
+      
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nome </th>
+              <td mat-cell *matCellDef="let participant"> {{ participant.name }} </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="code">
+              <th mat-header-cell *matHeaderCellDef> Código </th>
+              <td mat-cell *matCellDef="let participant">
+                {{ participant.code | maskCode }} 
+                <button mat-icon-button (click)="sendCode(participant)">
+                  <mat-icon>send</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="edit">
+              <th mat-header-cell *matHeaderCellDef> Editar </th>
+              <td mat-cell *matCellDef="let participant">
+                <button mat-icon-button (click)="editParticipant(participant)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef> Excluir </th>
+              <td mat-cell *matCellDef="let participant">
+                <button mat-icon-button (click)="deleteParticipant(participant)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </div>
+
+      <button class="addGroup" (click)="createGroup()">Finalizar</button>
+
+    </main>
+  </app-layout>
+  

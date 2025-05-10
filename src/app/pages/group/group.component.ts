@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent, Group } from 'src/app/shared';
 
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
-  styleUrls: ['./group.component.scss']
+  styleUrls: ['./group.component.scss'],
 })
-export class GroupComponent {
-  
-  constructor(
-    private router: Router,
-    private dialog: MatDialog
-  ) { }
+export class GroupComponent implements OnInit {
+  groups: Group[] = [];
+
+  constructor(private router: Router, private dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    const storedGroup = localStorage.getItem('createdGroup');
+    if (storedGroup) {
+      const parsed = JSON.parse(storedGroup);
+      this.groups = [parsed];
+    }
+  }
 
   navigateToGroup(id: number): void {
     this.router.navigate(['/group', id]);
+  }
+
+  trackById(index: number, item: Group) {
+    return item.id;
   }
 
   addGroup(): void {
@@ -24,14 +34,14 @@ export class GroupComponent {
       width: '350px',
       data: {
         title: 'Adicionar Grupo',
-        message: 'Deseja realmente criar um novo grupo?'
-      }
+        message: 'Deseja realmente criar um novo grupo?',
+      },
     });
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         console.log('Usuário confirmou. Criando grupo...');
-        this.router.navigate(['/create-group']);
+        this.router.navigate(['/group/0']);
       } else {
         console.log('Usuário cancelou.');
       }

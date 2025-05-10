@@ -16,7 +16,7 @@ export class HomeComponent {
   }
 
   navigateToGroup() {
-    this.router.navigate(['/group']);
+    this.router.navigate(['/groups']);
   }
   
   navigateToResults() {

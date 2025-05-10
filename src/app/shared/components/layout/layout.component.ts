@@ -14,11 +14,11 @@ export class LayoutComponent {
   @Input() username: string = '';
 
   goHome(): void {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/home');
   }
 
   goGroups(): void {
-    this.router.navigateByUrl('/group');
+    this.router.navigateByUrl('/groups');
   }
 
   goResults(): void {

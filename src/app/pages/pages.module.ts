@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -12,13 +12,15 @@ import { RoutingModule } from './routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GroupComponent } from './group/group.component';
+import { CreateGroupComponent } from './group/create-group/create-group.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ResultComponent,
-    GroupComponent
+    GroupComponent,
+    CreateGroupComponent
   ],
   imports: [
     CommonModule,
@@ -26,11 +28,7 @@ import { GroupComponent } from './group/group.component';
     SharedModule,
     MaterialModule,
     FormsModule,
-    MatTableModule,
-    MatButtonModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatDialogModule
+    ReactiveFormsModule
   ],
 })
 export class PagesModule {}

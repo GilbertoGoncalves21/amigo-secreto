@@ -1,8 +1,16 @@
 <header>
   <section class="header">
     <section class="cabecalho">
-      <img src="../../../assets/logo.svg" alt="Amigo Secreto">
+      <img src="../../../assets/logo.svg" alt="Amigo Secreto" (click)="goHome()"/>
     </section>
+    
+    <section class="navbar">
+      <section class="options" (click)="goHome()">Home</section>
+      <section class="options" (click)="goGroups()">Grupos</section>
+      <section class="options" (click)="goResults()">Ver Resultado</section>
+      <section class="options" (click)="goContact()">Contato</section>
+    </section>
+
     <section class="account">
       <div class="btn-account">
         <img src="../../../assets/eu.svg" alt="Foto de Perfil" />

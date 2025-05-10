@@ -33,7 +33,36 @@
           margin-top: 1rem;
           width: 10rem;
           height: 10rem;
+          cursor: pointer;
         }
+      }
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      padding: 1rem 0;
+
+      .options {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+          color: #E63939;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
       }
     }
   }
