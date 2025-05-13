@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { GroupComponent } from './group/group.component';
 import { CreateGroupComponent } from './group/create-group/create-group.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,10 @@ const routes: Routes = [
     {
         path: 'result',
         component: ResultComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
     }
 ];
 

@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GroupComponent } from './group/group.component';
 import { CreateGroupComponent } from './group/create-group/create-group.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CreateGroupComponent } from './group/create-group/create-group.componen
     HomeComponent,
     ResultComponent,
     GroupComponent,
-    CreateGroupComponent
+    CreateGroupComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

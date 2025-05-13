@@ -1,1 +1,22 @@
-<app-layout [title]="title"></app-layout>
+<app-layout [username]="title">
+    <main>
+        <div class="title">
+            <h1>Ver Resultados</h1>
+            <p>Informe o código recebido para visualizar o resultado do seu Amigo Secreto</p>
+        </div>
+        <div class="viewResult">
+            <form [formGroup]="form" #resultForm="ngForm">
+                <mat-form-field class="input">
+                    <mat-label>Código</mat-label>
+                    <input matInput placeholder="Código do Amigo Secreto" formControlName="code">
+                </mat-form-field>
+                <button type="submit" (click)="reviewSecretFriend()">Revelar</button>
+            </form>
+        </div>
+        <div class="result" *ngIf="result">
+            <h2>Resultado do Amigo Secreto</h2>
+            <p><strong>Amigo Secreto:</strong> {{ result }}</p>
+
+        </div>
+    </main>
+</app-layout>

@@ -32,6 +32,7 @@ export class GroupComponent implements OnInit {
   addGroup(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '350px',
+      panelClass: 'custom-dialog',
       data: {
         title: 'Adicionar Grupo',
         message: 'Deseja realmente criar um novo grupo?',
@@ -40,10 +41,7 @@ export class GroupComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log('Usuário confirmou. Criando grupo...');
         this.router.navigate(['/group/0']);
-      } else {
-        console.log('Usuário cancelou.');
       }
     });
   }

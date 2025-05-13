@@ -72,19 +72,20 @@
         }
   
         .btn {
-          width: 60% !important;
+          width: 100% !important;
           height: 6rem;
           display: none;
           flex-direction: row;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           background: linear-gradient(90deg, #7b0d0d, #e63939);
-          border-radius: 8px;
+          border-radius: 20px;
   
           .text {
             margin-bottom: 12px;
             font-family: "Poppins", sans-serif;
             color: white;
+            padding-left: 2rem;
   
             h1 {
               font-weight: bold;
@@ -100,12 +101,20 @@
               margin: 0;
             }
           }
+
+          .icon {
+            padding-right: 2rem;
+          }
         }
       }
     }
   
     @media (max-width: 1000px) {
       .main {
+        .title {
+          font-size: 1.6rem !important;
+        }
+
         .options {
           width: 90%;
           flex-direction: column;

@@ -22,4 +22,8 @@ export class HomeComponent {
   navigateToResults() {
     this.router.navigate(['/result']);
   }
+  
+  navigateToContact() {
+    this.router.navigate(['/contact']);
+  }
 }

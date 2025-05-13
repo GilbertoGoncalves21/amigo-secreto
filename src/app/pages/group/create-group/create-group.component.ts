@@ -13,6 +13,7 @@ import {
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RealizeDrawService } from 'src/app/services/realize-draw/realize-draw.service';
 
 @Component({
   selector: 'app-create-group',
@@ -28,37 +29,13 @@ export class CreateGroupComponent implements OnInit {
     private dialog: MatDialog,
     private router: Router,
     private fb: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private drawService: RealizeDrawService
   ) {
     this._form = this.fb.group({
       groupName: [EMPTY, Validators.required],
       integrantName: [EMPTY, Validators.required],
     });
-  }
-
-  ngOnInit(): void {
-    const groupId = +this.route.snapshot.paramMap.get('id')!;
-    console.log(groupId);
-
-    if (groupId !== 0) {
-      const groupStr = localStorage.getItem('createdGroup');
-      if (groupStr) {
-        const group: Group = JSON.parse(groupStr);
-        console.log(group);
-
-        if (group.id === groupId) {
-          this._participants = group.participants;
-          this.groupName?.setValue(group.name);
-        } else {
-          console.warn('Grupo não encontrado');
-        }
-      } else {
-        console.warn('Nenhum grupo encontrado no localStorage');
-      }
-    } else {
-      this._participants = [];
-      this.groupName?.reset();
-    }
   }
 
   get form(): FormGroup {
@@ -81,9 +58,32 @@ export class CreateGroupComponent implements OnInit {
     return this.form.get('integrantName');
   }
 
+  ngOnInit(): void {
+    const groupId = +this.route.snapshot.paramMap.get('id')!;
+
+    if (groupId !== 0) {
+      const groupStr = localStorage.getItem('createdGroup');
+      if (groupStr) {
+        const group: Group = JSON.parse(groupStr);
+
+        if (group.id === groupId) {
+          this._participants = group.participants;
+          this.groupName?.setValue(group.name);
+        } else {
+          console.warn('Grupo não encontrado');
+        }
+      } else {
+        console.warn('Nenhum grupo encontrado no localStorage');
+      }
+    } else {
+      this._participants = [];
+      this.groupName?.reset();
+    }
+  }
+
   createGroup() {
-    if (this._participants.length === 0) {
-      console.warn('É necessário pelo menos um participante');
+    if (this._participants.length < 2) {
+      console.warn('É necessário pelo menos dois participantes para o sorteio');
       return;
     }
 
@@ -94,14 +94,18 @@ export class CreateGroupComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result && result.trim()) {
+        const sortedParticipants = this.drawService.realizeDraw(
+          this._participants
+        );
+
         const groupData: Group = {
           id: Math.floor(Math.random() * 3000),
           name: result.trim(),
-          participants: this._participants,
+          participants: sortedParticipants,
         };
 
         localStorage.setItem('createdGroup', JSON.stringify(groupData));
-        console.log('Grupo salvo no cache:', groupData);
+        console.log('Grupo salvo no cache com sorteio:', groupData);
         this.router.navigate(['/groups']);
       } else {
         console.warn('Nome do grupo não informado');
@@ -118,14 +122,13 @@ export class CreateGroupComponent implements OnInit {
 
     const name = this.integrantName?.value;
     const newParticipant: Integrant = {
-      id: this._participants.length + 1,
-      name,
-      code: this.generateRandomCode(),
+      id: Math.random() * 1000,
+      name: name,
+      code: '',
     };
 
     this._participants = [...this._participants, newParticipant];
     this.integrantName?.reset();
-    console.log('Participante adicionado:', newParticipant);
   }
 
   deleteParticipant(participant: Integrant) {
@@ -147,9 +150,5 @@ export class CreateGroupComponent implements OnInit {
         console.log('Nome atualizado:', participant);
       }
     });
-  }
-
-  private generateRandomCode(): string {
-    return Math.random().toString(36).substring(2, 10).toUpperCase();
   }
 }
