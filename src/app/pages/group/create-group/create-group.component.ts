@@ -23,7 +23,7 @@ import { RealizeDrawService } from 'src/app/services/realize-draw/realize-draw.s
 export class CreateGroupComponent implements OnInit {
   private _form: FormGroup;
   private _participants: Integrant[] = [];
-  private _displayedColumns: string[] = ['name', 'code', 'edit', 'delete'];
+  private _displayedColumns: string[] = ['name', 'code', 'acoes'];
 
   constructor(
     private dialog: MatDialog,

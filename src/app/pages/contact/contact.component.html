@@ -1,4 +1,4 @@
-<app-layout [username]="'Gilberto'">
+<app-layout [username]="''">
     <main>
         <section class="main">
             <section class="title">
@@ -9,21 +9,10 @@
                 <div class="contact-info">
                     <h2>Informações de Contato</h2>
                     <div class="info">
-                        <p>Email:
-                            <a href="mailto: gibagonjunior@gmail.com" target="_blank">Clique aqui</a>
-                        </p>
-                        <p>Telefone:
-                            <a href="wa.me/42999533268">+55 (42) 99953-3268</a>
-                        </p>
-                        <p>LinkedIn:
-                            <a href="https://www.linkedin.com/in/gilberto-goncalves/" target="_blank">LinkedIn</a>
-                        </p>
-                        <p>GitHub:
-                            <a href="https://github.com/GilbertoGoncalves21" target="_blank">GitHub</a>
-                        </p>
-                        <p>Instagram:
-                            <a href="https://www.instagram.com/gilberto_goncalves21" target="_blank">Instagram</a>
-                        </p>
+                        <button class="contact-btn" (click)="openUrl('https://wa.me/5542999533268')">WhatsApp</button>
+                        <button class="contact-btn" (click)="openUrl('https://www.linkedin.com/in/gilberto-goncalves/')">LinkedIn</button>
+                        <button class="contact-btn" (click)="openUrl('https://github.com/GilbertoGoncalves21')">GitHub</button>
+                        <button class="contact-btn" (click)="openUrl('https://www.instagram.com/gilberto_goncalves21')">Instagram</button>
                     </div>
                 </div>
             </section>

@@ -32,7 +32,7 @@
             width: 100%;
 
                 .inputs {
-                    width: 40%;
+                    width: 50%;
 
                     input {
                         width: 100%;
@@ -42,13 +42,13 @@
                 }
                 
                 .addData {
-                    width: 10%;
+                    width: 20%;
                     height: 3rem;
                     margin-bottom: 1.5rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background: linear-gradient(90deg, #7b0d0d, #e63939);
+                    background-color: #e63939;
                     border-radius: 8px;
                     border: none;
                     color: white;
@@ -63,18 +63,18 @@
                 }
         }
 
-
         .table {
             width: 90%;
-            height: 25rem;
+            height: 16rem;
             margin-top: 3rem;
             border-radius: 20px;
             overflow-y: auto;
+            border: 1px solid #7b0d0d;
 
             table {
                 width: 100%;
                 border-radius: 20px;
-                border-collapse: collapse;
+                border: none;
 
                 th {
                     background-color: #7b0d0d;
@@ -85,20 +85,19 @@
 
                 td {
                     text-align: center;
-                    border-radius: 20px;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                 }
             }
         }
 
         .addGroup {
             width: 50%;
-            margin-top: 4rem;
+            position: absolute;
+            bottom: 2rem;
             height: 3rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(90deg, #7b0d0d, #e63939);
+            background: #7b0d0d;
             border-radius: 8px;
             border: none;
             color: white;
@@ -109,6 +108,32 @@
 
             &:hover {
                 transform: scale(1.1);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        main {
+            .form {
+                flex-direction: column;
+                align-items: center;
+
+                .inputs {
+                    width: 80%;
+                }
+
+                .addData {
+                    width: 80%;
+                }
+            }
+
+            .table {
+                width: 80%;
+                
+            }
+
+            .addGroup {
+                width: 80%;
             }
         }
     }

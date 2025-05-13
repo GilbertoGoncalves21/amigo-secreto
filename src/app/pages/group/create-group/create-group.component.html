@@ -26,24 +26,18 @@
               <th mat-header-cell *matHeaderCellDef> Código </th>
               <td mat-cell *matCellDef="let participant">
                 {{ participant.code | maskCode }} 
-                <button mat-icon-button (click)="sendCode(participant)">
+                <button mat-icon-button (click)="sendCode(participant)" *ngIf="participant.code">
                   <mat-icon>send</mat-icon>
                 </button>
               </td>
             </ng-container>
       
-            <ng-container matColumnDef="edit">
-              <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <ng-container matColumnDef="acoes">
+              <th mat-header-cell *matHeaderCellDef> Ações </th>
               <td mat-cell *matCellDef="let participant">
                 <button mat-icon-button (click)="editParticipant(participant)">
                   <mat-icon>edit</mat-icon>
                 </button>
-              </td>
-            </ng-container>
-      
-            <ng-container matColumnDef="delete">
-              <th mat-header-cell *matHeaderCellDef> Excluir </th>
-              <td mat-cell *matCellDef="let participant">
                 <button mat-icon-button (click)="deleteParticipant(participant)">
                   <mat-icon>close</mat-icon>
                 </button>
@@ -56,7 +50,7 @@
       </div>
 
       <button class="addGroup" (click)="createGroup()">Finalizar</button>
-
+      
     </main>
   </app-layout>
   
