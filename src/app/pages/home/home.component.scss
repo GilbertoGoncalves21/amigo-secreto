@@ -105,6 +105,12 @@
           .icon {
             padding-right: 2rem;
           }
+
+          &:nth-child(3) {
+            .icon {
+              padding-right: 1rem;
+            }
+          }
         }
       }
     }

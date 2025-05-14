@@ -24,5 +24,10 @@
     <p>Bem-vindo</p>
     <h1>{{ username }}</h1>
   </section>
+  <button *ngIf="isMobile && page" (click)="backToHome()" class="back-button">
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  </button>
   <ng-content></ng-content>
 </main>

@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
+  isMobile: boolean = window.innerWidth < 1000;
 
   constructor(private router: Router) { }
 
-  @Input() title: string = ''
+  @Input() page: string = '/home';
   @Input() username: string = '';
 
   goHome(): void {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl(this.page);
   }
 
   goGroups(): void {
@@ -27,5 +28,9 @@ export class LayoutComponent {
   
   goContact(): void {
     this.router.navigateByUrl('/contact');
+  }
+
+  backToHome(): void {
+    this.router.navigateByUrl(this.page);
   }
 }
